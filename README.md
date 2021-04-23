@@ -116,4 +116,24 @@ This project consists of 4 python Scripts
    server.py
     It makes use of the modules from previous script as well as selenium for ordering medicines from the mock website
     id_table is introduced 
+    The format of the table is 'Medicine Name' | 'id'
+    The ids are the html id names of the buttons in the mock website. This allows us to click certain buttons according to conditions
+    An infinite loop is introduced, hence this code runs infinitely
+      Whithin this loop if the time is 8am or 2 pm or 8 pm
+        The list of patients with prescribed medication is fetched
+          for medicine in prescribed medication
+            the quantity of medication in stock table is reduced by 1
+           this simulates the consumption of medication by patients
+        The list of medication in stock table where quantity is less than 10 is fetched 
+          A chrome web driver object for selenium is introduced. This allows selenium web automation using chrome browser
+          The web driver fetches the mock site, in this code the site was being hosted on localmachine using a simpleHTTP python server. The mock website is also available at 
+          http://jagadeeswar300.github.io/medicines/
+          We fetch the id of the low quantity medicines from id table and click the corresponding button. We then checkout the button
+          We fetch the price of the buttons from medicine price table and add it to a total price 
+          We store all the medicines we ordered in a list
+          At the end of the for loop, we print the medicine name, its price and the total price
+          
+I hope this document helps as i have spent a lot of time typing it
+          
+          
     
